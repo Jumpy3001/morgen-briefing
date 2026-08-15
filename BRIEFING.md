@@ -91,8 +91,25 @@ unter der URL aus, die in `README.md` steht.
 
 ### 6. Push-Benachrichtigung schicken
 
-Siehe `README.md`, Abschnitt „Zustellweg" — dort steht der aktive Kanal
-und der genaue Befehl.
+```bash
+curl -X POST https://ntfy.sh \
+  -H "Content-Type: application/json" \
+  -d '{
+    "topic": "tim-morgenbriefing-iw2k5mo",
+    "title": "Was heute zählt",
+    "message": "EIN_SATZ",
+    "click": "SEITEN_URL",
+    "tags": ["newspaper"]
+  }'
+```
+
+`EIN_SATZ` ist ein neu formulierter Anreißer von 10–20 Wörtern — nicht
+der erste Satz des Lede, sondern der interessanteste Punkt des Tages, so
+geschrieben, dass man draufklicken will. `SEITEN_URL` steht in `README.md`.
+
+Prüfe, dass `curl` HTTP 200 zurückgibt. Wenn nicht: noch einmal versuchen,
+dann im Lauf-Protokoll klar vermerken, dass die Benachrichtigung
+fehlgeschlagen ist.
 
 ## Wenn etwas schiefgeht
 

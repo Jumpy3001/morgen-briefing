@@ -72,12 +72,32 @@ node bauen.mjs ausgaben/2026-08-15.json
 
 ## Zustellweg
 
-*Noch nicht festgelegt — wird ergänzt, sobald Tim entschieden hat
-(ntfy-App oder E-Mail).*
+**ntfy.sh**, Topic: `tim-morgenbriefing-iw2k5mo`
+
+Auf dem Handy: App „ntfy" installieren (kostenlos, kein Login), auf
+*Subscribe* tippen, den Topic-Namen eingeben. Wer den Namen kennt, kann
+dorthin senden — deshalb steht er nur hier und in der Routine.
+
+Der tägliche Lauf schickt am Ende:
+
+```bash
+curl -X POST https://ntfy.sh \
+  -H "Content-Type: application/json" \
+  -d '{
+    "topic": "tim-morgenbriefing-iw2k5mo",
+    "title": "Was heute zählt",
+    "message": "<ein Satz, der den Artikel anteasert>",
+    "click": "<URL der heutigen Ausgabe>",
+    "tags": ["newspaper"]
+  }'
+```
+
+JSON statt der einfachen Header-Variante, weil Umlaute in HTTP-Headern
+Ärger machen.
 
 ## Offene Punkte
 
-- [ ] Zustellweg festlegen und hier eintragen
+- [ ] ntfy-App installieren und Topic abonnieren
 - [ ] GitHub-Repo anlegen, Pages aktivieren, URL hier eintragen
 - [ ] Cloud-Routine für 07:00 Europe/Berlin anlegen
 - [ ] Lieblings-Stil festlegen und in `stile.mjs` fixieren
