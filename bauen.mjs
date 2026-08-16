@@ -1,14 +1,14 @@
-// Baut aus einer Ausgabe (JSON) die fertige HTML-Seite.
+// Baut aus einer Ausgabe (JSON) die fertige Zeitungsseite.
 //
 //   node bauen.mjs ausgaben/2026-08-15.json
-//       -> docs/index.html  (die heutige Ausgabe)
+//       -> docs/index.html  (die aktuelle Ausgabe)
 //       -> docs/archiv/2026-08-15.html
 //
 //   node bauen.mjs ausgaben/2026-08-15.json --galerie
-//       -> docs/stilgalerie.html  (derselbe Text in allen Stil-Varianten,
+//       -> docs/stilgalerie.html  (derselbe Text in allen Varianten,
 //          nur als Entscheidungshilfe, nicht Teil des täglichen Laufs)
 
-import { readFileSync, writeFileSync, mkdirSync } from "node:fs";
+import { readFileSync, writeFileSync, mkdirSync, readdirSync } from "node:fs";
 import { dirname, join } from "node:path";
 import { fileURLToPath } from "node:url";
 import { VARIANTEN, varianteFuer, css, FIXIERT } from "./stile.mjs";
@@ -27,8 +27,20 @@ function datumLang(iso) {
   return `${WOCHENTAGE[d.getUTCDay()]}, ${d.getUTCDate()}. ${MONATE[d.getUTCMonth()]} ${d.getUTCFullYear()}`;
 }
 
+// Fortlaufende Ausgabennummer: die wievielte Ausgabe ist das?
+function ausgabenNummer(datum) {
+  try {
+    const alle = readdirSync(join(WURZEL, "ausgaben"))
+      .filter((f) => f.endsWith(".json")).sort();
+    const i = alle.indexOf(`${datum}.json`);
+    return i >= 0 ? i + 1 : alle.length + 1;
+  } catch {
+    return 1;
+  }
+}
+
 function lesezeit(ausgabe) {
-  const woerter = [ausgabe.lede, ausgabe.schluss,
+  const woerter = [ausgabe.standfirst ?? ausgabe.lede, ausgabe.schluss,
     ...ausgabe.abschnitte.flatMap((a) => a.absaetze)]
     .join(" ").split(/\s+/).filter(Boolean).length;
   return Math.max(1, Math.round(woerter / 200));
@@ -36,11 +48,25 @@ function lesezeit(ausgabe) {
 
 export function seite(ausgabe, variante) {
   const v = variante || varianteFuer(new Date(ausgabe.datum + "T12:00:00Z"));
-  const bereiche = ausgabe.abschnitte.map((a) => esc(a.bereich)).join(" · ");
+  const nr = ausgabenNummer(ausgabe.datum);
+  const standfirst = ausgabe.standfirst ?? ausgabe.lede;
 
-  const abschnitte = ausgabe.abschnitte.map((a, i) => `
-    <div class="section">
-      <h2><span class="n">${String(i + 1).padStart(2, "0")}</span>${esc(a.bereich)} — ${esc(a.ueberschrift)}</h2>
+  const datumszeile = [
+    datumLang(ausgabe.datum),
+    ...ausgabe.abschnitte.map((a) => a.bereich),
+  ].map((s) => `<span>${esc(s)}</span>`)
+    // Die Leerzeichen sind Absicht: ohne sie findet der Umbruch auf dem
+    // Handy keine Stelle und die Zeile läuft rechts aus dem Bild.
+    .join(' <span class="trenner">✦</span> ');
+
+  const ressorts = ausgabe.abschnitte.map((a, i) => `
+    <div class="ressort">
+      <div class="ressort-zeile">
+        <span class="ressort-nr">${String(i + 1).padStart(2, "0")}</span>
+        <span class="ressort-name">${esc(a.bereich)}</span>
+        <span class="ressort-linie"></span>
+      </div>
+      <h2>${esc(a.ueberschrift)}</h2>
       ${a.absaetze.map((p) => `<p>${esc(p)}</p>`).join("\n      ")}
     </div>`).join("\n");
 
@@ -50,27 +76,26 @@ export function seite(ausgabe, variante) {
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>${esc(ausgabe.titel || "Was heute zählt")} — ${datumLang(ausgabe.datum)}</title>
+<meta name="robots" content="noindex">
+<!-- Stil ${v.id} (${v.name})${FIXIERT ? ", fixiert" : ", Rotation aktiv"} · Ausgabe Nr. ${nr} -->
 <style>${css(v)}</style>
 </head>
 <body>
-  <div class="page">
-    <div class="kicker">Morgen-Briefing</div>
-    <h1>${esc(ausgabe.titel || "Was heute zählt")}</h1>
-    <div class="meta-row">
-      <span>${datumLang(ausgabe.datum)}</span>
-      <span class="dot"></span>
-      <span>≈ ${lesezeit(ausgabe)} Min. Lesezeit</span>
-      <span class="dot"></span>
-      <span>${bereiche}</span>
-    </div>
-    <p class="lede">${esc(ausgabe.lede)}</p>
-${abschnitte}
-    <p class="closing">${esc(ausgabe.schluss)}</p>
-    <div class="impressum">
-      <span>Stil ${v.id} · ${v.name}${FIXIERT ? " (fixiert)" : ""}</span>
-      <span class="dot"></span>
-      <span>Tims persönlicher Verlag</span>
-    </div>
+  <div class="blatt">
+    <header class="kopf">
+      <div class="kopf-oben">
+        <span>Ausgabe Nr.&nbsp;${nr}</span>
+        <span>Morgen-Briefing</span>
+        <span>${lesezeit(ausgabe)}&nbsp;Min.</span>
+      </div>
+      <h1 class="titel">${esc(ausgabe.titel || "Was heute zählt")}</h1>
+      <div class="datumszeile">${datumszeile}</div>
+    </header>
+
+    <p class="standfirst">${esc(standfirst)}</p>
+${ressorts}
+    <p class="schluss">${esc(ausgabe.schluss)}</p>
+    <div class="signet">Ende der Ausgabe</div>
   </div>
 </body>
 </html>
@@ -90,21 +115,21 @@ function galerie(ausgabe) {
 <title>Stil-Galerie — Morgen-Briefing</title>
 <style>
   body { margin:0; background:#e9e7e1; font-family:-apple-system,"Segoe UI",sans-serif; color:#2a2822; }
-  .kopf { max-width:1200px; margin:0 auto; padding:32px 20px 8px; }
+  .kopf { max-width:1400px; margin:0 auto; padding:32px 20px 8px; }
   h1 { font-size:22px; margin:0 0 6px; }
   p.hinweis { color:#6d6a62; font-size:14px; margin:0 0 24px; max-width:60ch; line-height:1.6; }
-  .raster { max-width:1200px; margin:0 auto; padding:0 20px 60px;
-            display:grid; gap:24px; grid-template-columns:repeat(auto-fit,minmax(320px,1fr)); }
+  .raster { max-width:1400px; margin:0 auto; padding:0 20px 60px;
+            display:grid; gap:24px; grid-template-columns:repeat(auto-fit,minmax(340px,1fr)); }
   figure { margin:0; background:#fff; border-radius:10px; overflow:hidden;
            box-shadow:0 1px 3px rgba(0,0,0,.10); }
   figcaption { font-size:13px; font-weight:600; padding:12px 14px; border-bottom:1px solid #eceae4; }
-  iframe { width:100%; height:640px; border:0; display:block; }
+  iframe { width:100%; height:900px; border:0; display:block; }
 </style></head>
 <body>
   <div class="kopf">
     <h1>Stil-Galerie</h1>
     <p class="hinweis">Derselbe Artikel in allen Varianten. Sag mir den Buchstaben,
-    der dir am besten gefällt — dann wird er fixiert und die Rotation hört auf.</p>
+    der es werden soll — dann wird er fixiert und die Rotation hört auf.</p>
   </div>
   <div class="raster">${karten}</div>
 </body></html>
