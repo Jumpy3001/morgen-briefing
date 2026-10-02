@@ -70,8 +70,9 @@ jobs:
           DATUM: ${{ steps.ausgabe.outputs.datum }}
           NTFY_TOPIC: ${{ secrets.NTFY_TOPIC }}
         run: |
-          node - <<'EOF'
-          const fs = require("fs");
+          node --input-type=module - <<'EOF'
+          import fs from "node:fs";
+          import { ZEITUNG, KUERZEL } from "./stile.mjs";
           const datum = process.env.DATUM;
           const a = JSON.parse(fs.readFileSync(`ausgaben/${datum}.json`, "utf8"));
           // Anreißer aus der Ausgabe; fehlt er, der erste Satz des Standfirst.
@@ -79,17 +80,16 @@ jobs:
           const text = a.anreisser || (standfirst.match(/^.*?[.!?](\s|$)/) || [standfirst])[0].trim();
           const body = {
             topic: process.env.NTFY_TOPIC,
-            title: "Deine Zeitung ist da",
+            title: `${ZEITUNG}${KUERZEL} ist da`,
             message: text,
             click: `https://jumpy3001.github.io/morgen-briefing/archiv/${datum}.html`,
             tags: ["newspaper"],
           };
-          fetch("https://ntfy.sh", {
+          const r = await fetch("https://ntfy.sh", {
             method: "POST",
             headers: { "Content-Type": "application/json" },
             body: JSON.stringify(body),
-          }).then((r) => {
-            console.log("ntfy:", r.status);
-            if (!r.ok) process.exit(1);
           });
+          console.log("ntfy:", r.status);
+          if (!r.ok) process.exit(1);
           EOF

@@ -13,7 +13,9 @@
 export const FIXIERT = null;
 
 // Der Name im Zeitungskopf. Nur hier ändern.
-export const ZEITUNG = "Was heute zählt";
+// Das Kürzel steht klein und farbig hinter dem Namen: 07 wie 7 Uhr.
+export const ZEITUNG = "Moment";
+export const KUERZEL = "/07";
 
 const GEORGIA = 'Georgia, "Times New Roman", serif';
 const PALATINO = 'Palatino, "Palatino Linotype", "Book Antiqua", Georgia, serif';
@@ -96,6 +98,11 @@ export function css(v) {
     font-family: ${t.titelSchrift}; font-size: ${t.titelGroesse};
     font-weight: ${t.titelGewicht}; letter-spacing: ${t.titelSperrung};
     line-height: 1.02; margin: 0; color: ${t.tinte};
+  }
+  .kuerzel {
+    font-family: ${t.uiSchrift}; font-size: 0.34em; font-weight: 600;
+    letter-spacing: 0.06em; color: ${t.akzent};
+    vertical-align: 0.95em; margin-left: 0.08em;
   }
   .datumszeile {
     font-family: ${t.uiSchrift}; font-size: 10.5px; letter-spacing: 0.14em;
