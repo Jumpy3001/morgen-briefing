@@ -6,6 +6,17 @@ Der Cloud-Agent startet ohne Vorwissen und liest nur diese Datei.
 **Leser:** Tim, Deutsch, Zeitzone Europe/Berlin — und später ein, zwei
 weitere Leute. Die Seite ist eine kleine, persönliche Tageszeitung.
 
+## Vor allem anderen
+
+Lies **STILBUCH.md** vollständig. Es gilt für jede Zeile, die du schreibst —
+Stimme, Sprache, Verbotsliste, Aufbau, Quellenregeln. Nach dem Entwurf
+prüfst du ihn mit dem Prüfraster der Chefredaktion am Ende des Stilbuchs
+und überarbeitest, bis jede Note mindestens 4 ist (höchstens zwei Durchgänge).
+
+**Recherchetiefe:** Lies pro Ressort mindestens zwei Artikel im Volltext
+mit `WebFetch`, nicht nur Suchergebnis-Vorschauen. Nimm dir Zeit —
+gründlich schlägt schnell.
+
 ## Ablauf
 
 ### 0. Darf ich überhaupt loslegen?
