@@ -86,6 +86,6 @@ Winterzeit erledigen sich dadurch von selbst.
 
 ## Offene Punkte
 
-- [ ] Zeitungsname festlegen (`ZEITUNG` in `stile.mjs`)
+- [x] Zeitungsname: Moment/07 (`ZEITUNG` + `KUERZEL` in `stile.mjs`)
 - [ ] Lieblings-Stil fixieren (`FIXIERT` in `stile.mjs`)
 - [ ] Zweiter Leser: eigenes Topic oder E-Mail-Versand
