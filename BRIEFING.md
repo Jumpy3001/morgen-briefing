@@ -1,9 +1,7 @@
 # Tagesauftrag für den Cloud-Agenten
 
 Das hier ist die vollständige Arbeitsanweisung für den täglichen Lauf.
-Der Cloud-Agent startet ohne Vorwissen und liest nur diese Datei plus den
-kurzen Auftrag der Routine (dort steht das Push-Topic, das bewusst nicht
-im öffentlichen Repo liegt).
+Der Cloud-Agent startet ohne Vorwissen und liest nur diese Datei.
 
 **Leser:** Tim, Deutsch, Zeitzone Europe/Berlin — und später ein, zwei
 weitere Leute. Die Seite ist eine kleine, persönliche Tageszeitung.
@@ -78,9 +76,14 @@ Als JSON unter `ausgaben/$HEUTE.json`:
     { "bereich": "Politik", "ueberschrift": "…", "absaetze": ["…"] },
     { "bereich": "Wissenschaft", "ueberschrift": "…", "absaetze": ["…"] }
   ],
-  "schluss": "…"
+  "schluss": "…",
+  "anreisser": "…"
 }
 ```
+
+`anreisser` ist der Text der Push-Benachrichtigung: 10–20 Wörter, der
+interessanteste Punkt des Tages, so geschrieben, dass man draufklicken
+will. Nicht der erste Satz des Standfirst.
 
 Die `ueberschrift` ist die Schlagzeile des Ressorts. Der Zeitungsname
 kommt automatisch aus `stile.mjs`.
@@ -105,45 +108,17 @@ git commit -m "Ausgabe vom $HEUTE"
 git push origin HEAD:main
 ```
 
-Danach warten, bis GitHub Pages die neue Seite ausliefert — höchstens
-drei Minuten, alle 15 Sekunden prüfen:
+Mehr nicht. Sobald die neue Ausgabe auf GitHub liegt, startet dort die
+Action `.github/workflows/benachrichtigen.yml`: Sie wartet, bis die Seite
+online ist, und schickt dann den Push mit dem `anreisser`.
 
-```bash
-URL="https://jumpy3001.github.io/morgen-briefing/archiv/$HEUTE.html"
-for i in $(seq 1 12); do
-  [ "$(curl -s -o /dev/null -w '%{http_code}' "$URL")" = "200" ] && break
-  sleep 15
-done
-```
-
-### 6. Push-Benachrichtigung schicken
-
-Das Topic steht im Auftrag der Routine, nicht hier.
-
-```bash
-curl -s -X POST https://ntfy.sh \
-  -H "Content-Type: application/json" \
-  -d '{
-    "topic": "TOPIC_AUS_DEM_AUFTRAG",
-    "title": "Deine Zeitung ist da",
-    "message": "EIN_SATZ",
-    "click": "'"$URL"'",
-    "tags": ["newspaper"]
-  }'
-```
-
-`EIN_SATZ`: ein neu formulierter Anreißer von 10–20 Wörtern — der
-interessanteste Punkt des Tages, so geschrieben, dass man draufklicken
-will. Nicht der erste Satz des Standfirst.
-
-Der Link zeigt auf die Archivseite des Tages, nicht auf `index.html` —
-so öffnet eine alte Benachrichtigung auch noch Tage später die richtige
-Ausgabe.
+**Nicht selbst versuchen, ntfy.sh oder github.io zu erreichen** — die
+Sandbox sperrt beide Adressen, das ist Absicht und kein Fehler.
 
 ## Wenn etwas schiefgeht
 
 - Recherche liefert für einen Bereich nichts Brauchbares: anderen Bereich
   nehmen. Es sind immer vier.
-- `git push` scheitert: trotzdem benachrichtigen, Titel dann
-  „Zeitung konnte nicht erscheinen", Nachricht mit dem Fehler in einem Satz.
+- `git push` scheitert: Tim mit dem Werkzeug `PushNotification`
+  benachrichtigen — ein Satz, was nicht geklappt hat.
 - Keine Umbauten an `bauen.mjs` oder `stile.mjs`.

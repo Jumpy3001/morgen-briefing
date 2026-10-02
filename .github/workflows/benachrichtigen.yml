@@ -1,0 +1,95 @@
+# Schickt die Push-Benachrichtigung, sobald eine neue Ausgabe online ist.
+#
+# Warum hier und nicht in der Cloud-Routine: Die Sandbox der Routine darf
+# ntfy.sh und github.io nicht erreichen. GitHub-Server dürfen das.
+#
+# Das ntfy-Topic liegt als Secret NTFY_TOPIC im Repo — nie im Code.
+
+name: Benachrichtigung
+
+on:
+  push:
+    branches: [main]
+    paths: ["ausgaben/*.json"]
+  workflow_dispatch:
+    inputs:
+      datum:
+        description: "Ausgabe (JJJJ-MM-TT), deren Benachrichtigung gesendet werden soll"
+        required: true
+
+permissions:
+  contents: read
+
+jobs:
+  senden:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 2
+
+      - name: Neue Ausgabe finden
+        id: ausgabe
+        env:
+          EINGABE: ${{ github.event.inputs.datum }}
+        run: |
+          if [ -n "$EINGABE" ]; then
+            DATUM="$EINGABE"
+          else
+            DATEI=$(git diff --name-only --diff-filter=A HEAD~1 HEAD -- 'ausgaben/*.json' | sort | tail -1)
+            if [ -z "$DATEI" ]; then
+              echo "Keine neue Ausgabe in diesem Push — nichts zu tun."
+              exit 0
+            fi
+            DATUM=$(basename "$DATEI" .json)
+          fi
+          if ! echo "$DATUM" | grep -Eq '^[0-9]{4}-[0-9]{2}-[0-9]{2}$'; then
+            echo "Ungültiges Datum: $DATUM"; exit 1
+          fi
+          test -f "ausgaben/$DATUM.json" || { echo "ausgaben/$DATUM.json fehlt"; exit 1; }
+          echo "datum=$DATUM" >> "$GITHUB_OUTPUT"
+
+      - name: Warten, bis die Seite online ist
+        if: steps.ausgabe.outputs.datum
+        env:
+          DATUM: ${{ steps.ausgabe.outputs.datum }}
+        run: |
+          URL="https://jumpy3001.github.io/morgen-briefing/archiv/$DATUM.html"
+          for i in $(seq 1 40); do
+            CODE=$(curl -s -o /dev/null -w '%{http_code}' "$URL")
+            echo "Versuch $i: $CODE"
+            [ "$CODE" = "200" ] && exit 0
+            sleep 15
+          done
+          echo "Seite nach 10 Minuten nicht erreichbar"; exit 1
+
+      - name: Push schicken
+        if: steps.ausgabe.outputs.datum
+        env:
+          DATUM: ${{ steps.ausgabe.outputs.datum }}
+          NTFY_TOPIC: ${{ secrets.NTFY_TOPIC }}
+        run: |
+          node - <<'EOF'
+          const fs = require("fs");
+          const datum = process.env.DATUM;
+          const a = JSON.parse(fs.readFileSync(`ausgaben/${datum}.json`, "utf8"));
+          // Anreißer aus der Ausgabe; fehlt er, der erste Satz des Standfirst.
+          const standfirst = a.standfirst ?? a.lede ?? "";
+          const text = a.anreisser || (standfirst.match(/^.*?[.!?](\s|$)/) || [standfirst])[0].trim();
+          const body = {
+            topic: process.env.NTFY_TOPIC,
+            title: "Deine Zeitung ist da",
+            message: text,
+            click: `https://jumpy3001.github.io/morgen-briefing/archiv/${datum}.html`,
+            tags: ["newspaper"],
+          };
+          fetch("https://ntfy.sh", {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify(body),
+          }).then((r) => {
+            console.log("ntfy:", r.status);
+            if (!r.ok) process.exit(1);
+          });
+          EOF
