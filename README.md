@@ -51,7 +51,7 @@ Rotiert täglich. Welcher Stil dran war, steht als Kommentar im Quelltext —
 nie sichtbar auf der Seite.
 
 **Festlegen:** In `stile.mjs` oben `FIXIERT = null` auf den Buchstaben
-setzen, z. B. `FIXIERT = "C";`. Dann hört die Rotation auf.
+setzen, z. B. `FIXIERT = "B";`. Dann hört die Rotation auf.
 
 **Alle Varianten nebeneinander ansehen:**
 
