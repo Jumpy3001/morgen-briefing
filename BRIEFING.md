@@ -1,12 +1,31 @@
 # Tagesauftrag für den Cloud-Agenten
 
 Das hier ist die vollständige Arbeitsanweisung für den täglichen Lauf.
-Der Cloud-Agent startet ohne Vorwissen und liest nur diese Datei.
+Der Cloud-Agent startet ohne Vorwissen und liest nur diese Datei plus den
+kurzen Auftrag der Routine (dort steht das Push-Topic, das bewusst nicht
+im öffentlichen Repo liegt).
 
-**Leser:** Tim, Deutsch, Zeitzone Europe/Berlin. Die Seite ist seine
-persönliche Morgenzeitung — niemand sonst liest sie.
+**Leser:** Tim, Deutsch, Zeitzone Europe/Berlin — und später ein, zwei
+weitere Leute. Die Seite ist eine kleine, persönliche Tageszeitung.
 
 ## Ablauf
+
+### 0. Darf ich überhaupt loslegen?
+
+Die Routine feuert zweimal pro Morgen (04:47 und 05:47 UTC), damit sie
+im Sommer wie im Winter um 06:47 Berliner Zeit läuft. Genau einer der
+beiden Läufe ist der richtige.
+
+```bash
+STUNDE=$(TZ=Europe/Berlin date +%H)
+HEUTE=$(TZ=Europe/Berlin date +%F)
+```
+
+- `STUNDE` ist `05` oder `07` → **sofort beenden**, nichts tun. Das ist
+  der überzählige Lauf.
+- `ausgaben/$HEUTE.json` existiert schon → **sofort beenden**. Die
+  heutige Ausgabe ist bereits erschienen.
+- Sonst: weiter mit Schritt 1.
 
 ### 1. Recherchieren
 
@@ -16,44 +35,43 @@ Suche mit `WebSearch` aktuelle Nachrichten (letzte ~24 Stunden) zu vier Bereiche
 2. **Wirtschaft**
 3. **Politik**
 4. **Ein wechselnder vierter Bereich** — nicht jeden Tag derselbe.
-   Sinnvolle Kandidaten: Wissenschaft, Klima, Gesellschaft, Medizin,
-   Energie, Kultur, Sport, Raumfahrt, Bildung.
-   Schau in `ausgaben/` nach den letzten ~7 Ausgaben und nimm einen
-   Bereich, der zuletzt nicht dran war.
+   Kandidaten: Wissenschaft, Klima, Gesellschaft, Medizin, Energie,
+   Kultur, Sport, Raumfahrt, Bildung. Schau in `ausgaben/` nach den
+   letzten ~7 Ausgaben und nimm einen Bereich, der zuletzt nicht dran war.
 
 Pro Bereich zwei bis drei Suchanfragen, damit du mehr als eine Quelle hast.
 Wenn eine Meldung nur aus einer Zusammenfassung stammt und du sie nicht
 verifizieren konntest: vorsichtig formulieren („laut Berichten", „einem
-Bericht zufolge") statt sie als gesichert darzustellen. Lieber eine
-Meldung weglassen als etwas erfinden. **Niemals Zahlen, Zitate oder Namen
-erfinden.**
+Bericht zufolge"). Lieber eine Meldung weglassen als etwas erfinden.
+**Niemals Zahlen, Zitate oder Namen erfinden.**
 
 ### 2. Artikel schreiben
 
 Ein einziger zusammenhängender Artikel, **kein** Nachrichten-Feed, keine
-Aufzählungen, keine Bullet Points.
+Aufzählungen.
 
 - Sprache: Deutsch, erzählerisch, spannend, direkt. Kein Behördendeutsch,
-  kein Marketing-Ton, keine Floskeln wie „in der heutigen schnelllebigen Welt".
+  kein Marketington, keine Floskeln.
 - Länge: **1000–1300 Wörter** insgesamt.
-- Aufbau: Lede-Absatz, der alle vier Themen anteasert und verbindet →
-  vier nummerierte Abschnitte mit je 2–3 Absätzen → Schluss-Absatz, der
-  den roten Faden ausspricht.
+- Aufbau: Standfirst-Absatz, der alle vier Themen anteasert und verbindet →
+  vier Ressorts mit je 2–3 Absätzen → Schlusswort, das den roten Faden
+  ausspricht.
 - Der **rote Faden** ist Pflicht: Finde den gemeinsamen Nenner der vier
-  Themen des Tages und mach ihn im Lede und im Schluss explizit. Kein
-  aufgesetzter Zwangs-Zusammenhang — wenn er dünn ist, benenne das ehrlich.
-- Erklär kurz, was ein Fachbegriff bedeutet, wenn er vorkommt.
-- Der Schluss endet mit einem Verweis auf morgen 7 Uhr.
+  Themen und mach ihn im Standfirst und im Schluss explizit. Kein
+  Zwangs-Zusammenhang — wenn er dünn ist, benenne das ehrlich.
+- Fachbegriffe in einem Halbsatz erklären.
+- Der Schluss endet mit einem Verweis auf morgen früh.
+- Nichts Technisches in den Text: keine Hinweise auf KI, Routinen,
+  Versionen, Stile.
 
 ### 3. Ausgabe speichern
 
-Als JSON unter `ausgaben/JJJJ-MM-TT.json` (heutiges Datum, Europe/Berlin):
+Als JSON unter `ausgaben/$HEUTE.json`:
 
 ```json
 {
-  "datum": "2026-08-15",
-  "titel": "Was heute zählt",
-  "lede": "…",
+  "datum": "2026-10-03",
+  "standfirst": "…",
   "abschnitte": [
     { "bereich": "KI & Tech", "ueberschrift": "…", "absaetze": ["…", "…"] },
     { "bereich": "Wirtschaft", "ueberschrift": "…", "absaetze": ["…"] },
@@ -64,59 +82,68 @@ Als JSON unter `ausgaben/JJJJ-MM-TT.json` (heutiges Datum, Europe/Berlin):
 }
 ```
 
-`titel` bleibt „Was heute zählt" — das ist der feste Zeitungskopf.
-Die Tages-Schlagzeile steckt in den `ueberschrift`-Feldern.
+Die `ueberschrift` ist die Schlagzeile des Ressorts. Der Zeitungsname
+kommt automatisch aus `stile.mjs`.
 
 ### 4. Seite bauen
 
 ```bash
-node bauen.mjs ausgaben/JJJJ-MM-TT.json
+node bauen.mjs ausgaben/$HEUTE.json
 ```
 
-Das schreibt `docs/index.html` (die aktuelle Ausgabe) und
-`docs/archiv/JJJJ-MM-TT.html` (Archiv). **Nicht** von Hand HTML schreiben —
-Layout und Stil-Rotation macht das Skript. Kurz prüfen, dass beide Dateien
-neu geschrieben wurden und die Wortzahl im Zielbereich liegt.
+Schreibt `docs/index.html` und `docs/archiv/$HEUTE.html`. **Nicht** von
+Hand HTML schreiben. Prüfen, dass beide Dateien neu sind und die Wortzahl
+im Zielbereich liegt.
 
 ### 5. Veröffentlichen
 
 ```bash
+git config user.name "Jumpy3001"
+git config user.email "164887822+Jumpy3001@users.noreply.github.com"
 git add -A
-git commit -m "Ausgabe vom JJJJ-MM-TT"
-git push
+git commit -m "Ausgabe vom $HEUTE"
+git push origin HEAD:main
 ```
 
-GitHub Pages liefert danach innerhalb von ein bis zwei Minuten die neue Seite
-unter der URL aus, die in `README.md` steht.
+Danach warten, bis GitHub Pages die neue Seite ausliefert — höchstens
+drei Minuten, alle 15 Sekunden prüfen:
+
+```bash
+URL="https://jumpy3001.github.io/morgen-briefing/archiv/$HEUTE.html"
+for i in $(seq 1 12); do
+  [ "$(curl -s -o /dev/null -w '%{http_code}' "$URL")" = "200" ] && break
+  sleep 15
+done
+```
 
 ### 6. Push-Benachrichtigung schicken
 
+Das Topic steht im Auftrag der Routine, nicht hier.
+
 ```bash
-curl -X POST https://ntfy.sh \
+curl -s -X POST https://ntfy.sh \
   -H "Content-Type: application/json" \
   -d '{
-    "topic": "tim-morgenbriefing-iw2k5mo",
-    "title": "Was heute zählt",
+    "topic": "TOPIC_AUS_DEM_AUFTRAG",
+    "title": "Deine Zeitung ist da",
     "message": "EIN_SATZ",
-    "click": "SEITEN_URL",
+    "click": "'"$URL"'",
     "tags": ["newspaper"]
   }'
 ```
 
-`EIN_SATZ` ist ein neu formulierter Anreißer von 10–20 Wörtern — nicht
-der erste Satz des Lede, sondern der interessanteste Punkt des Tages, so
-geschrieben, dass man draufklicken will. `SEITEN_URL` steht in `README.md`.
+`EIN_SATZ`: ein neu formulierter Anreißer von 10–20 Wörtern — der
+interessanteste Punkt des Tages, so geschrieben, dass man draufklicken
+will. Nicht der erste Satz des Standfirst.
 
-Prüfe, dass `curl` HTTP 200 zurückgibt. Wenn nicht: noch einmal versuchen,
-dann im Lauf-Protokoll klar vermerken, dass die Benachrichtigung
-fehlgeschlagen ist.
+Der Link zeigt auf die Archivseite des Tages, nicht auf `index.html` —
+so öffnet eine alte Benachrichtigung auch noch Tage später die richtige
+Ausgabe.
 
 ## Wenn etwas schiefgeht
 
-- Recherche liefert für einen Bereich nichts Brauchbares: nimm einen
-  anderen Bereich, statt den Abschnitt zu streichen. Es sind immer vier.
-- `git push` scheitert: trotzdem die Benachrichtigung schicken, aber mit
-  dem Hinweis „(Seite konnte nicht aktualisiert werden)" im Text, damit
-  Tim sofort sieht, dass etwas klemmt.
-- Nicht mehr als nötig ändern. Keine Umbauten an `bauen.mjs` oder
-  `stile.mjs` ohne Auftrag — die sind fertig.
+- Recherche liefert für einen Bereich nichts Brauchbares: anderen Bereich
+  nehmen. Es sind immer vier.
+- `git push` scheitert: trotzdem benachrichtigen, Titel dann
+  „Zeitung konnte nicht erscheinen", Nachricht mit dem Fehler in einem Satz.
+- Keine Umbauten an `bauen.mjs` oder `stile.mjs`.

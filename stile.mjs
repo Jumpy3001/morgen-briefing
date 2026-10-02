@@ -12,6 +12,9 @@
 
 export const FIXIERT = null;
 
+// Der Name im Zeitungskopf. Nur hier ändern.
+export const ZEITUNG = "Was heute zählt";
+
 const GEORGIA = 'Georgia, "Times New Roman", serif';
 const PALATINO = 'Palatino, "Palatino Linotype", "Book Antiqua", Georgia, serif';
 const TIMES = '"Times New Roman", Times, serif';

@@ -39,19 +39,16 @@ neuen Stil neu bauen.
 
 ## Stil-Varianten
 
-Sechs Varianten, gleiche Struktur, anderes Aussehen:
+Drei Varianten, gleiches Zeitungs-Gerüst, andere Anmutung:
 
 | | Name | Charakter |
 |---|---|---|
-| A | Sepia | Der abgesegnete Ausgangsentwurf: warmes Papier, Georgia, Kupfer-Akzent |
-| B | Tinte | Kühler, Palatino, dunkelblau, Strich unter der Überschrift |
-| C | Salbei | Grüner Akzent, Sans-Serif-Schlagzeile, mehr Luft |
-| D | Klassik | Zentrierter Zeitungskopf, echte Zwischenüberschriften statt Kapitälchen |
-| E | Abendrot | Terrakotta, Trennpunkte statt Linien, wärmster der sechs |
-| F | Kobalt | Moderner, blaue Kicker-Plakette, nummerierte Chips |
+| A | Sepia | Warmes Papier, Georgia, Kupfer-Akzent |
+| B | Tinte | Kühler, Palatino, dunkelblau |
+| D | Klassik | Didot-Zeitungskopf, Times, Schwarz auf Fast-Weiß |
 
-Rotiert täglich (Tag im Jahr modulo 6). Unten auf jeder Seite steht, welcher
-Stil gerade dran war.
+Rotiert täglich. Welcher Stil dran war, steht als Kommentar im Quelltext —
+nie sichtbar auf der Seite.
 
 **Festlegen:** In `stile.mjs` oben `FIXIERT = null` auf den Buchstaben
 setzen, z. B. `FIXIERT = "C";`. Dann hört die Rotation auf.
@@ -72,33 +69,23 @@ node bauen.mjs ausgaben/2026-08-15.json
 
 ## Zustellweg
 
-**ntfy.sh**, Topic: `tim-morgenbriefing-iw2k5mo`
+Push über **ntfy.sh** (App „ntfy", kostenlos, kein Login). Das Topic steht
+bewusst **nicht** in diesem öffentlichen Repo, sondern nur im Auftrag der
+Cloud-Routine — wer das Topic kennt, kann Nachrichten dorthin schicken.
 
-Auf dem Handy: App „ntfy" installieren (kostenlos, kein Login), auf
-*Subscribe* tippen, den Topic-Namen eingeben. Wer den Namen kennt, kann
-dorthin senden — deshalb steht er nur hier und in der Routine.
+## Adresse
 
-Der tägliche Lauf schickt am Ende:
+Aktuelle Ausgabe: https://jumpy3001.github.io/morgen-briefing/
+Archiv: `https://jumpy3001.github.io/morgen-briefing/archiv/JJJJ-MM-TT.html`
 
-```bash
-curl -X POST https://ntfy.sh \
-  -H "Content-Type: application/json" \
-  -d '{
-    "topic": "tim-morgenbriefing-iw2k5mo",
-    "title": "Was heute zählt",
-    "message": "<ein Satz, der den Artikel anteasert>",
-    "click": "<URL der heutigen Ausgabe>",
-    "tags": ["newspaper"]
-  }'
-```
+## Zeitplan
 
-JSON statt der einfachen Header-Variante, weil Umlaute in HTTP-Headern
-Ärger machen.
+Die Routine feuert um 04:47 und 05:47 UTC. Der Tagesauftrag lässt nur den
+Lauf weiterlaufen, der um 06:47 Berliner Zeit stattfindet — Sommer- und
+Winterzeit erledigen sich dadurch von selbst.
 
 ## Offene Punkte
 
-- [ ] ntfy-App installieren und Topic abonnieren
-- [ ] GitHub-Repo anlegen, Pages aktivieren, URL hier eintragen
-- [ ] Cloud-Routine für 07:00 Europe/Berlin anlegen
-- [ ] Lieblings-Stil festlegen und in `stile.mjs` fixieren
-- [ ] Ende Oktober: Cron von 05:00 UTC auf 06:00 UTC ändern (Winterzeit)
+- [ ] Zeitungsname festlegen (`ZEITUNG` in `stile.mjs`)
+- [ ] Lieblings-Stil fixieren (`FIXIERT` in `stile.mjs`)
+- [ ] Zweiter Leser: eigenes Topic oder E-Mail-Versand

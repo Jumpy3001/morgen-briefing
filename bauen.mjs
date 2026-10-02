@@ -11,7 +11,7 @@
 import { readFileSync, writeFileSync, mkdirSync, readdirSync } from "node:fs";
 import { dirname, join } from "node:path";
 import { fileURLToPath } from "node:url";
-import { VARIANTEN, varianteFuer, css, FIXIERT } from "./stile.mjs";
+import { VARIANTEN, varianteFuer, css, FIXIERT, ZEITUNG } from "./stile.mjs";
 
 const WURZEL = dirname(fileURLToPath(import.meta.url));
 
@@ -75,7 +75,7 @@ export function seite(ausgabe, variante) {
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>${esc(ausgabe.titel || "Was heute zählt")} — ${datumLang(ausgabe.datum)}</title>
+<title>${esc(ZEITUNG)} — ${datumLang(ausgabe.datum)}</title>
 <meta name="robots" content="noindex">
 <!-- Stil ${v.id} (${v.name})${FIXIERT ? ", fixiert" : ", Rotation aktiv"} · Ausgabe Nr. ${nr} -->
 <style>${css(v)}</style>
@@ -88,7 +88,7 @@ export function seite(ausgabe, variante) {
         <span>Morgen-Briefing</span>
         <span>${lesezeit(ausgabe)}&nbsp;Min.</span>
       </div>
-      <h1 class="titel">${esc(ausgabe.titel || "Was heute zählt")}</h1>
+      <h1 class="titel">${esc(ZEITUNG)}</h1>
       <div class="datumszeile">${datumszeile}</div>
     </header>
 
