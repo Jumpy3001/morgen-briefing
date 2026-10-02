@@ -69,9 +69,16 @@ node bauen.mjs ausgaben/2026-08-15.json
 
 ## Zustellweg
 
-Push über **ntfy.sh** (App „ntfy", kostenlos, kein Login). Das Topic steht
-bewusst **nicht** in diesem öffentlichen Repo, sondern nur im Auftrag der
-Cloud-Routine — wer das Topic kennt, kann Nachrichten dorthin schicken.
+Push über **ntfy.sh** (App „ntfy", kostenlos, kein Login), verschickt von
+der GitHub Action `benachrichtigen.yml`. Das Topic liegt dort als Secret
+`NTFY_TOPIC`.
+
+**Abo-Seite zum Weitergeben:** https://jumpy3001.github.io/morgen-briefing/abonnieren.html
+— App-Links, Knopf fürs Handy, QR-Code für andere Bildschirme, Topic zum
+Kopieren. Bewusste Entscheidung (03.10.2026): Das Topic ist damit
+öffentlich. Die Seite ist nicht verlinkt und für Suchmaschinen gesperrt.
+Kommt je Spam: neues Topic erzeugen, Secret tauschen, Seite neu erzeugen
+(QR mit dem npm-Paket `qrcode`, nicht Teil des Repos).
 
 ## Adresse
 
