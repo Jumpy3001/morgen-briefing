@@ -1,0 +1,46 @@
+{
+  "datum": "2026-10-06",
+  "standfirst": "In Leipzig baut ein amerikanisches Start-up von diesem Jahr an Marschflugkörper, weil Europa seine eigene Rüstungslücke zu lange ignoriert hat. Außenminister Johann Wadephul warnt im selben Atemzug, der Westen unterschätze, wie weit Wladimir Putins Pläne über die Ukraine hinausreichen könnten. Bei BMW schließt künstliche Intelligenz eine andere Lücke: die zwischen zu vielen Chefs und zu wenig Gewinn, ein Fünftel des Managements soll gehen. Und in Stockholm zeigt der Medizin-Nobelpreis, wie lange es dauern kann, eine Lücke im Wissen zu schließen. Drei Forscher haben vierzig Jahre gebraucht, um mit Licht ins Gehirn zu sehen. Vier Geschichten über Lücken, die liegen blieben, bis jemand sie schließen musste.",
+  "abschnitte": [
+    {
+      "bereich": "Wirtschaft",
+      "ueberschrift": "In Leipzig baut ein Amerikaner Europas Raketenfabrik",
+      "absaetze": [
+        "Die amerikanische Rüstungsfirma Covenant hat Anfang Oktober in Leipzig eine Fabrik für Marschflugkörper eröffnet. Das Werk im Leipziger Norden wird nach Angaben des Unternehmens die größte Produktionsstätte von Covenant weltweit, auf mehr als 10.000 Quadratmetern. Dort entsteht der „Anthem“, ein bodengestützter Marschflugkörper mit einem rund 200 Kilogramm schweren Gefechtskopf. Seine Reichweite soll Berichten zufolge mehr als 1.500 Kilometer betragen, ungefähr die Strecke von Leipzig bis Kiew. Er ist für Ziele tief im gegnerischen Hinterland gedacht, für sogenannte Deep-Strike-Einsätze. Covenant-Chef Michael Kaufman nennt den Standort schlicht den „weltweit größten Standort von Covenant“.",
+        "Die Produktionszahlen sollen schnell wachsen. 2027 sollen rund 1.000 Exemplare vom Band laufen, 2028 bis zu 5.000. Für die Fertigung werden mehrere Hundert Menschen gebraucht, bis zu 250 davon direkt in der Produktion, vom Facharbeiter bis zur Qualitätskontrolle. Gefechtsköpfe montiert das Unternehmen Berichten zufolge nicht am Standort Leipzig.",
+        "Die eigentliche Geschichte ist, wer diese Lücke schließt. Seit der Zeitenwende vor mehr als vier Jahren will Europa unabhängiger von amerikanischer Rüstungstechnik werden. In der Praxis importiert Deutschland stattdessen eine amerikanische Fabrik samt amerikanischer Waffe, nur mit deutschen Arbeitsplätzen und deutscher Adresse. Es entstehen Jobs, es entsteht Kapazität, aber die Marke und die Technologie bleiben amerikanisch. Die EU diskutiert seit Jahren über gemeinsame Rüstungsbeschaffung, um genau solche Abhängigkeiten zu vermeiden, bislang ohne einen eigenen Produzenten dieser Größenordnung. Wer auf einen europäischen Rüstungskonzern dieser Größe gehofft hatte, muss zusehen, wie ein amerikanisches Unternehmen schneller liefert, als die europäische Konkurrenz plant.",
+        "Mehreren Berichten zufolge sollen mehr als 95 Prozent der Bauteile aus Europa kommen, von Zulieferern aus der Auto- und Elektroindustrie. Das soll die Fabrik unabhängiger von amerikanischen Exportkontrollen machen, auch wenn am Ende ein amerikanisches Unternehmen über Marke und Technologie entscheidet. Wie viel europäische Souveränität das am Ende tatsächlich bedeutet, bleibt offen.",
+        "Für Sachsen ist die Fabrik auch ein wirtschaftliches Signal. Die Region sucht seit dem Ende von Kohle und Schwerindustrie nach neuen Arbeitgebern. Seit der Zeitenwende 2022 werben Bund und Länder aktiv um Rüstungsansiedlungen wie diese, sie versprechen Jobs und Steuereinnahmen in einer Branche, die über Jahrzehnte eher schrumpfte als wuchs.",
+        "Das Gegenargument gegen solche Fabriken ist immer dasselbe: Wer Langstreckenwaffen produziert, macht sich im Ernstfall auch selbst zu einem naheliegenden Ziel. Das gilt für Leipzig genauso wie für jeden anderen Rüstungsstandort. Es ist der Preis, den eine geschlossene Lücke verlangt: mehr Kapazität, aber auch mehr Verwundbarkeit."
+      ]
+    },
+    {
+      "bereich": "Politik",
+      "ueberschrift": "Wadephul warnt: Putin ist mit der Ukraine nicht fertig",
+      "absaetze": [
+        "Außenminister Johann Wadephul warnt: Russland ist mit der Ukraine nicht am Ziel. Im ntv-Interview mit Pinar Atalay sagte er am Sonntagabend: „Und deswegen müssen wir doch davon ausgehen, dass Russland weitergehende Pläne hat.“ Als Beleg nennt er ein altes Zitat: Wladimir Putin hatte den Zusammenbruch der Sowjetunion einmal die „größte Katastrophe des 20. Jahrhunderts“ genannt. Wadephuls Schluss daraus: „Wenn das die größte Katastrophe war, dann möchte er die wahrscheinlich reparieren.“",
+        "Namentlich nennt der Minister mögliche nächste Ziele: die Ukraine, Georgien, Moldau und das Baltikum. Besonders verwundbar gilt der Suwałki-Korridor, der schmale Landstreifen zwischen Polen und Litauen, der das Baltikum mit dem Rest der Nato verbindet. Wadephul ist seit Mai 2025 Außenminister in der Regierung von Friedrich Merz. Für Deutschland zieht er eine klare Nato-Linie. Betroffen sei man nicht erst bei einem Angriff auf deutsches Gebiet, sondern schon, wenn die Grenze nach Polen, Estland, Lettland oder Litauen fällt.",
+        "Eine Garantie ist das nicht. Aber die Lücke zwischen dem, was Putin für möglich halten könnte, und dem, was der Westen bislang für wahrscheinlich hielt, wird mit jeder Warnung kleiner."
+      ]
+    },
+    {
+      "bereich": "KI & Tech",
+      "ueberschrift": "BMW baut ein Fünftel des Managements ab, KI organisiert den Rest",
+      "absaetze": [
+        "BMW baut um, und zwar oben. Bis Mitte 2027 soll ein Fünftel aller Managementfunktionen verschwinden, vor allem in Verwaltung, Forschung, Einkauf und Planung – die eigentliche Fertigung bleibt unberührt. Grund ist die Marge: Für das Automobilgeschäft erwartet der Konzern 2026 nur noch ein bis drei Prozent Gewinnspanne. Chinesische Konkurrenz und Überkapazitäten drücken von allen Seiten. Insgesamt sollen bis Ende 2027 weltweit 8.000 der 154.000 Stellen wegfallen, mehr als die Hälfte davon in Deutschland. Ein Sozialplan mit dem Betriebsrat schließt betriebsbedingte Kündigungen hierzulande aus; wer geht, geht freiwillig oder altersbedingt. Das Abfindungsprogramm läuft von diesem Monat an bis Ende 2027, ab 2028 soll der Umbau rund eine Milliarde Euro im Jahr sparen.",
+        "Die künstliche Intelligenz ersetzt dabei nicht die Manager, sie hilft beim Aufräumen danach. BMW steckt 200 Millionen Euro in drei Jahre KI-Programme und erwartet 1,2 Milliarden Euro Wertbeitrag zurück. Im Einkauf koordiniert ein System namens AIconic mehrere KI-Agenten gleichzeitig, in der Fertigung erkennt die Plattform AIQX Fehler, bevor ein Mensch sie sieht. Weniger Chefs, mehr Software dazwischen: BMW probiert gerade aus, wie eine Autofirma ohne die halbe mittlere Führungsebene funktioniert."
+      ]
+    },
+    {
+      "bereich": "Medizin",
+      "ueberschrift": "Der Nobelpreis für den Lichtschalter im Gehirn",
+      "absaetze": [
+        "Der Medizin-Nobelpreis 2026 geht an eine Idee, die vierzig Jahre brauchte, um zu reifen. Peter Hegemann von der Humboldt-Universität Berlin und Georg Nagel von der Universität Würzburg entdeckten in einer einzelligen Alge ein Protein, das auf Licht reagiert: Channelrhodopsin. Karl Deisseroth, heute an der Stanford University, baute dessen Gen in Nervenzellen von Ratten ein und schuf damit einen Lichtschalter für einzelne Neuronen. Die Technik heißt Optogenetik und zeigt Forschern erstmals, wie einzelne Nervenzellen Erinnerungen, Gefühle und Verhalten tatsächlich steuern.",
+        "Nobelkomitee-Vorsitzender Per Svenningsson beschreibt den Effekt so: „Die Optogenetik bietet Möglichkeiten, das Gehirn auf eine Weise zu kartieren, von der wir früher nur träumen konnten.“ Die drei Forscher teilen sich zwölf Millionen schwedische Kronen, umgerechnet rund eine Million Euro pro Person. Verliehen wird der Preis am 10. Dezember in Stockholm, dem Todestag Alfred Nobels, in diesem Jahr zugleich der 125. Jahrestag des Preises selbst.",
+        "Zwischen der ersten Beobachtung an der Alge und dem Preis liegen vier Jahrzehnte. In all den Jahren wusste niemand, ob daraus je mehr wird als eine Kuriosität im Labor."
+      ]
+    }
+  ],
+  "schluss": "Vier Lücken, vier verschiedene Antworten. Europa schließt seine Rüstungslücke mit einer amerikanischen Fabrik. Wadephul warnt vor der Lücke zwischen Putins möglichen Zielen und unserer Einschätzung. BMW schließt seine Effizienzlücke mit Software statt mit weniger Ambition. Und die Optogenetik brauchte vier Jahrzehnte, um die Lücke zwischen Idee und Anwendung zu schließen. Manche dieser Lücken kosten nur Geld. Eine kostet im schlimmsten Fall Sicherheit. Morgen früh sehen wir, welche als Nächstes auffällt.",
+  "anreisser": "Ein amerikanisches Start-up baut in Leipzig Europas größte Raketenfabrik – während Wadephul vor Putins nächsten Zielen warnt."
+}
