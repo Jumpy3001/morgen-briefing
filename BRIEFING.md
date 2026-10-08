@@ -13,9 +13,16 @@ Stimme, Sprache, Verbotsliste, Aufbau, Quellenregeln. Nach dem Entwurf
 prüfst du ihn mit dem Prüfraster der Chefredaktion am Ende des Stilbuchs
 und überarbeitest, bis jede Note mindestens 4 ist (höchstens zwei Durchgänge).
 
-**Recherchetiefe:** Lies pro Ressort mindestens zwei Artikel im Volltext
-mit `WebFetch`, nicht nur Suchergebnis-Vorschauen. Nimm dir Zeit —
-gründlich schlägt schnell.
+**Recherchetiefe:** `WebFetch` auf Nachrichtenseiten ist in dieser
+Umgebung gesperrt (tagesschau, zeit, spiegel, reuters … liefern 403) —
+nicht versuchen, das ist bekannt. Recherchiere deshalb mit `WebSearch`,
+aber gründlich: pro Geschichte mehrere Suchen, jede Tatsache in mindestens
+zwei Treffern gegengeprüft, Datumsangaben besonders sorgfältig (heute,
+gestern, Wochentag). Was du nur in einem Treffer findest, formulierst du
+vorsichtig oder lässt es weg.
+
+**Eine Ausgabe fällt nie aus.** Lieber eine solide Ausgabe aus gut
+gegengeprüften Suchtreffern als keine.
 
 ## Ablauf
 
