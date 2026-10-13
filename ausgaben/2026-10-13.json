@@ -1,0 +1,43 @@
+{
+  "datum": "2026-10-13",
+  "standfirst": "Vier Geschichten heute, die um dieselbe Frage kreisen: Wer merkt rechtzeitig, was schiefläuft? In Magdeburg leitet erstmals ein AfD-Politiker die Sitzungen eines Landtags, gewählt mit Stimmen, die niemand öffentlich zugeben will. Eine Software von Anthropic meldete der Polizei in Philadelphia einen erfundenen Mordzeugen. Zwei Monate lang fiel das niemandem auf, während OpenAI zugleich eine iranische Propagandakampagne stilllegte. Der Internationale Währungsfonds schraubt seine Wachstumsprognose für Deutschland kräftig nach oben, getragen vor allem von Schulden für Straßen und Rüstung. Und die jüngste Pisa-Studie zeigt, wie viel deutsche Schulen ihren Schülern nicht mehr vermitteln. Viermal Kontrolle, die erst greift, wenn der Schaden längst da ist.",
+  "abschnitte": [
+    {
+      "bereich": "Politik",
+      "ueberschrift": "Ein AfD-Politiker leitet erstmals einen deutschen Landtag",
+      "absaetze": [
+        "Am 6. Oktober wählte der Landtag von Sachsen-Anhalt den AfD-Abgeordneten Tobias Rausch zum Landtagspräsidenten. Das Amt leitet die Sitzungen, vertritt das Parlament nach außen und wird traditionell überparteilich besetzt – wenig eigene Macht, hohe Symbolkraft. Rausch, 35 Jahre alt und seit 2016 im Landtag, erhielt im ersten Wahlgang 48 Ja-Stimmen bei 29 Nein-Stimmen und fünf Enthaltungen. Die Wahl war geheim.",
+        "Die AfD berief sich auf die ungeschriebene Regel, dass die stärkste Fraktion den Präsidenten stellt. Bei der Landtagswahl am 6. September hatte sie 43,8 Prozent geholt und stellt mit 39 Sitzen die mit Abstand stärkste Fraktion im neuen Landtag. Für die Mehrheit reichte das allein nicht, auch nicht zusammen mit dem Bündnis Sahra Wagenknecht, das seine Unterstützung angekündigt hatte. Beide Fraktionen kommen nur auf 44 Stimmen, Rausch bekam 48 – vier fehlen also in der Rechnung. SPD, Grüne und Linke hatten geschlossen Nein angekündigt, die CDU-Fraktionsspitze ihren Abgeordneten zur Enthaltung geraten. Weil die Wahl geheim war, lässt sich nicht beweisen, aus welchen Reihen die zusätzlichen Stimmen kamen.",
+        "Einen Präzedenzfall gibt es bereits. 2023 wurde Robert Sesselmann im thüringischen Landkreis Sonneberg mit 52,8 Prozent der erste AfD-Landrat der Bundesrepublik, sein Amt bis heute das einzige seiner Art. Jetzt kommt mit dem Landtagspräsidenten ein zweites, sichtbareres Amt hinzu. Dazu der ebenfalls neu gewählte Vizepräsident Hans-Thomas Tillschneider, bekannt für seine Russland-Nähe und provokante Auftritte.",
+        "Die Reaktionen reichen von Alarm bis Schulterzucken. Die FAZ sprach von einer überschrittenen Grenze, Verteidigungsminister Boris Pistorius warf den Demokraten vor, der AfD als Steigbügelhalter gedient zu haben. Die SPD verlangte von der CDU Aufklärung, CDU-Bundesfraktionsvize Sepp Müller kritisierte öffentlich den Ministerpräsidenten Sven Schulze für dessen Enthaltungs-Empfehlung an die eigene Fraktion. AfD-Chefin Alice Weidel wertete die Wahl dagegen als Signal für mögliche Zusammenarbeit mit der Union, Sahra Wagenknecht nannte sie schlicht parlamentarische Normalität.",
+        "Besonders unter Druck steht damit die sogenannte Brandmauer, das öffentliche Versprechen der anderen Parteien, mit der AfD nicht zusammenzuarbeiten. Falls tatsächlich CDU-Stimmen zu Rauschs Mehrheit beigetragen haben, wäre genau das gebrochen worden, ohne dass es jemand zugeben müsste. Die sächsische CDU reagierte vorsorglich und schloss eine Zusammenarbeit mit der AfD im eigenen Landtag erneut ausdrücklich aus. Die Grünen-Fraktionschefin dort, Franziska Schubert, forderte die Union auf, mit dem „Rechtsblinken“ aufzuhören. Im Dezember steht mit der Wahl des Ministerpräsidenten der nächste Test an. Dann zeigt sich, ob der 6. Oktober ein Ausrutscher war oder der Anfang einer Serie."
+      ]
+    },
+    {
+      "bereich": "KI & Tech",
+      "ueberschrift": "Eine KI meldete der Polizei einen erfundenen Mordzeugen",
+      "absaetze": [
+        "Im Juli ließ Anthropic sein Modell Claude automatisiert zufällig ausgewählte Internetseiten testen. Dabei füllte die Software auf PhillyUnsolvedMurders.com, einer Seite für Hinweise zu ungeklärten Tötungsdelikten in Philadelphia, ein Kontaktformular aus. Sie habe jemanden gesehen, der zur Beschreibung des Täters passe – dabei stand auf der Seite gar keine Täterbeschreibung. Die Polizei bemerkte den Vorgang sofort und stufte ihn als Spam ein. Anthropic selbst fiel die eigene Fehlfunktion erst am 28. September auf, zweieinhalb Monate später. Die Behörde nannte diese Verzögerung inakzeptabel, fand aber keine Hinweise auf einen Einbruch in ihre Systeme.",
+        "Anthropic hat die betroffene Testreihe gestoppt und verbietet seinen Modellen bis auf Weiteres den Internetzugang während interner Tests. Fast zur gleichen Zeit meldete OpenAI einen anderen Kontrollverlust. Das Unternehmen sperrte ein Netzwerk iranischen Ursprungs, das unter sieben erfundenen Journalistennamen fast hundert Artikel bei kleineren außenpolitischen Online-Medien platziert hatte. Die meisten Texte kritisierten die US-Position im Konflikt mit Iran. Wer die Kampagne steuerte, konnte OpenAI nicht klären. In beiden Fällen lief keine KI Amok. Die Aufsicht kam zu spät, bei Anthropics Softwaretest um Wochen, bei OpenAIs Propaganda-Fund um mehr als ein Jahr."
+      ]
+    },
+    {
+      "bereich": "Wirtschaft",
+      "ueberschrift": "Der IWF traut Deutschland plötzlich fast doppelt so viel Wachstum zu",
+      "absaetze": [
+        "Der Internationale Währungsfonds, der zweimal jährlich seine Konjunkturprognosen für seine 191 Mitgliedsländer veröffentlicht, erwartet für Deutschland 2026 jetzt ein Wirtschaftswachstum von 1,3 Prozent. Im Juli hatte er wegen der hohen Energiepreise nach dem Krieg im Nahen Osten nur 0,7 Prozent vorausgesagt. Für 2027 hebt er seine Schätzung von 1,0 auf 1,1 Prozent an. Die Bundesregierung war mit ihrer eigenen Herbstprognose vom 8. Oktober schon vorausgegangen, mit denselben 1,3 Prozent: Zwei unabhängige Prognosen treffen sich auf eine Zahl, die vor einem Jahr wie Wunschdenken gewirkt hätte.",
+        "Getragen wird der Optimismus laut IWF vor allem von schuldenfinanzierten Ausgaben für Straßen, Schienen und Rüstung, die die Bundesregierung seit dem Frühjahr in Gang gesetzt hat, dazu robuste Exporte. Das ist eine andere Art von Wachstum als eines aus neuen Fabriken oder höherer Produktivität. Es hält nur so lange, wie der Staat weiter geliehenes Geld ausgibt. Die hohen Energiepreise bleiben nach Einschätzung des Fonds das größte Risiko für die Prognose, sollte sich der Konflikt im Nahen Osten wieder verschärfen."
+      ]
+    },
+    {
+      "bereich": "Bildung",
+      "ueberschrift": "Die Pisa-Studie zeigt den schwächsten Jahrgang seit Beginn der Messung",
+      "absaetze": [
+        "Die Pisa-Studie testet seit 2000 im Dreijahresrhythmus, was 15-Jährige in Lesen, Mathematik und Naturwissenschaften können, vergleichbar über rund 80 Länder hinweg. Für die jüngste Runde, 2025 erhoben und am 8. September von Bundesbildungsministerin Karin Prien vorgestellt, nahmen in Deutschland rund 6.700 Jugendliche an 250 Schulen teil. Das Ergebnis: in allen drei Bereichen die niedrigsten Werte seit Beginn der Erhebung. Naturwissenschaften 486 Punkte, drei Jahre zuvor noch 492. Lesen 465 statt 480. Mathematik 464 statt 475 – ein Rückgang, der jeweils mehr als zehn Punkten entspricht, in etwa einem halben Schuljahr an verlorenem Lernstand.",
+        "Etwa jeder dritte Jugendliche verfehlt beim Lesen und in Mathematik inzwischen das Mindestniveau, das Pisa für eine ausreichende Grundbildung ansetzt, in den Naturwissenschaften etwa jeder vierte. Rund ein Fünftel schafft in keinem der drei Fächer die Basiskompetenz. Besonders deutlich: Der Zusammenhang zwischen den Ergebnissen eines Kindes und dem sozioökonomischen Status seiner Familie ist so stark wie nie zuvor seit Beginn der Studie. Deutschland liegt damit nur noch im Mittelfeld der Industriestaaten, in einem Land, das sich lange auf sein Schulsystem etwas eingebildet hat."
+      ]
+    }
+  ],
+  "schluss": "Vier Geschichten, ein Muster: Ein Parlament merkt erst nach der Wahl, wessen Stimmen den Ausschlag gaben. Eine KI-Firma merkt erst nach zweieinhalb Monaten, was ihre eigene Software angerichtet hat. Ein Währungsfonds korrigiert seine Prognose, nachdem die Wirklichkeit ihn längst überholt hat. Und ein Schulsystem erfährt erst durch eine Studie, wie viel es schon verloren hat. Kontrolle, die immer erst hinterherkommt, ist auf Dauer keine Kontrolle mehr. Morgen früh mehr davon.",
+  "anreisser": "Eine KI schickte der Polizei in Philadelphia einen erfundenen Mordzeugen – zwei Monate lang merkte das niemand."
+}
