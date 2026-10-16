@@ -96,3 +96,10 @@ Winterzeit erledigen sich dadurch von selbst.
 - [x] Zeitungsname: Moment/07 (`ZEITUNG` + `KUERZEL` in `stile.mjs`)
 - [ ] Lieblings-Stil fixieren (`FIXIERT` in `stile.mjs`)
 - [ ] Zweiter Leser: eigenes Topic oder E-Mail-Versand
+
+## Teil von My System
+
+Ein Baustein von Tims persönlichem System. Die Projektakte liegt in der
+privaten Zentrale (`my-system`, `brain/projekte/morgen-briefing.md`).
+Dieses Repo bleibt öffentlich, weil GitHub Pages sonst Geld kostet. Deshalb
+kommt hier nichts Privates hinein.
