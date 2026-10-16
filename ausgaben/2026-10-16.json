@@ -1,0 +1,43 @@
+{
+  "datum": "2026-10-16",
+  "standfirst": "Vier Geschichten heute, ein gemeinsames Motiv: Rechnungen, die fällig werden. In Berlin tritt eine Ministerin zurück, weil ihre eigene Koalition sie zermürbt hat. In Frankfurt wartet die Commerzbank seit Monaten auf ein Wort der Europäischen Zentralbank, das über ihr Schicksal entscheidet. In den USA holen Dutzende Generalstaatsanwälte ein Unternehmen ein, das schneller gewachsen ist, als es Verantwortung übernehmen konnte: OpenAI. Und am Persischen Golf zeigt sich, wie knapp die Ölreserven sind, mit denen die großen Industriestaaten einen Krieg abfedern wollen. Vier Systeme, die lange auf Pump liefen – jetzt zahlen sie.",
+  "abschnitte": [
+    {
+      "bereich": "Politik",
+      "ueberschrift": "Bärbel Bas geht, die Koalition wackelt weiter",
+      "absaetze": [
+        "Am 12. Oktober hat Bärbel Bas ihre beiden wichtigsten Ämter aufgegeben. Die SPD-Politikerin war Bundesarbeitsministerin und Co-Vorsitzende ihrer Partei, zwei der einflussreichsten Posten der Koalition. Ihre Begründung ist in der Berliner Politik selten: Ihre Stieftochter ist gestorben, und die Trauer ließ sich kaum noch mit öffentlichen Angriffen vereinbaren, die zuletzt auch aus der Union kamen. Kanzler Friedrich Merz dankte ihr für die Arbeit. SPD-Chef Lars Klingbeil nannte die Attacken auf sie unanständig.",
+        "Bas kam aus dem Ruhrgebiet, lernte Sozialversicherungsfachangestellte und saß seit 2009 im Bundestag. Von 2021 bis 2025 war sie Bundestagspräsidentin, bevor die Ampel-Koalition zerbrach und der Posten traditionsgemäß an die stärkste Fraktion ging. Die SPD schickte sie danach als Arbeitsministerin ins Kabinett von Merz, in ein Haus mit dem größten Etat der Bundesregierung. Unionspolitiker warfen ihr zuletzt vor, Reformgesetze zu langsam vorzulegen, etwa bei der Rente und der neuen Grundsicherung, die das Bürgergeld ersetzen soll. Mit ihr verlässt also auch eine der wenigen Stimmen die Regierung, die zwischen den Koalitionspartnern vermitteln konnte.",
+        "Der Rücktritt trifft die Koalition mitten in laufenden Konflikten, die sich nicht von selbst lösen. Beim Rentenpaket, das der Bundestag schon im Dezember 2025 beschlossen hat, gibt es weiter Streit um die Zeit nach 2031: Die Junge Gruppe der Union lehnt die gesetzliche Haltelinie beim Rentenniveau ab, weil sie aus ihrer Sicht über den Koalitionsvertrag hinausgeht. Auch über die Einkommensteuer und die Migrationspolitik wird in der Koalition seit Monaten gestritten, ohne dass eine Seite nachgibt. Bas hatte in diesen Konflikten oft vermittelt, nun fehlt genau diese Stimme, während die Baustellen liegen bleiben.",
+        "Nachfolger im Arbeitsministerium soll der frühere rheinland-pfälzische Ministerpräsident Alexander Schweitzer werden. Den Parteivorsitz will die SPD erst zum Jahreswechsel neu besetzen, gehandelt wird unter anderem die mecklenburg-vorpommersche Ministerpräsidentin Manuela Schwesig. Bis dahin steht die Partei ohne klare Spitze da, mitten in einer Koalition, die ohnehin kaum noch Rückhalt hat.",
+        "Wie wenig, zeigt der ARD-DeutschlandTrend von Ende September: Nur noch 10 Prozent der Befragten sind mit der Arbeit der Koalition zufrieden, ebenso wenige mit Merz persönlich, ein historischer Tiefstand. Selbst unter CDU- und CSU-Anhängern sind nur 40 Prozent zufrieden. In der Sonntagsfrage liegt die AfD mit 27 Prozent so klar vorn wie nie, die Union kommt nur noch auf 20 Prozent, ihren schlechtesten Wert seit 2021. Der Rücktritt von Bas ist für sich genommen eine persönliche Entscheidung. Für die Koalition kommt er zu einem Zeitpunkt, an dem jede weitere Erschütterung schwerer wiegt als die vorherige."
+      ]
+    },
+    {
+      "bereich": "Wirtschaft",
+      "ueberschrift": "Die Commerzbank wartet auf ein Wort aus Frankfurt",
+      "absaetze": [
+        "Die größte Bankenübernahme Europas der vergangenen Jahre hängt an einem einzigen Wort aus Frankfurt. Der italienische Branchenriese Unicredit hält inzwischen 47,6 Prozent des Kapitals der Commerzbank und 49,65 Prozent der Stimmrechte, aufgebaut über anderthalb Jahre am offenen Markt. Für die Kontrolle braucht Unicredit aber die Zustimmung der Europäischen Zentralbank als Bankenaufseherin. In einem internen Prüfdokument, das laut Reuters vorliegt, heißt es, es gebe „keinen Grund zur Ablehnung“ der Übernahme – zugleich warnt die Aufsicht, die Integration der beiden Häuser werde herausfordernd und langwierig. Eine Entscheidung wird frühestens in der zweiten Oktoberhälfte erwartet.",
+        "Vor dem endgültigen Ja stehen weitere Hürden: Die EU-Kartellbehörde, die US-Notenbank Fed und die polnische Finanzaufsicht müssen ebenfalls zustimmen. Die eigentliche Kontrollübernahme erwarten Beobachter deshalb erst in der ersten Hälfte 2027. Die Commerzbank-Führung lehnt das Angebot offiziell weiterhin ab. Verhindern konnte sie den Einstieg trotzdem nicht: Unicredit hat sich längst über den freien Markt eingekauft, ohne dass der Vorstand zustimmen musste. Für Deutschland geht es dabei um mehr als zwei Bilanzen, die zusammengeführt werden: Die Commerzbank finanziert einen großen Teil des deutschen Mittelstands, und ein Stellenabbau in größerem Stil gilt als eine der Bedingungen, unter denen sich die erhofften Synergien für Unicredit überhaupt rechnen."
+      ]
+    },
+    {
+      "bereich": "KI & Tech",
+      "ueberschrift": "Die Rechnung für ChatGPT",
+      "absaetze": [
+        "OpenAI steckt mitten im Versuch, an die Börse zu gehen, und zugleich im größten rechtlichen Druck seiner Geschichte. Floridas Generalstaatsanwalt James Uthmeier hat das Unternehmen und seinen Chef Sam Altman persönlich verklagt. Der Vorwurf: ChatGPT sei als sicher für Kinder beworben worden, obwohl es Risiken bis hin zu Selbstverletzung, Sucht und, in einem Fall, Hilfe im Umfeld eines Schusswaffenangriffs an der Florida State University gegeben habe. Uthmeier fordert Schadenersatz in möglicher Milliardenhöhe und verlangt vor Gericht eine Vorgabe, wie ChatGPT künftig mit jungen Nutzern umgehen muss.",
+        "Florida ist dabei nur der erste Bundesstaat, der klagt. Eine Koalition aus 42 Generalstaatsanwälten, angeführt von New York, hat OpenAI zusätzlich per Vorladung zur Herausgabe interner Unterlagen verpflichtet: zu Werbepraktiken, zum Umgang mit Nutzerdaten und ausdrücklich dazu, wie das Unternehmen mit Minderjährigen und älteren Nutzern umgeht. OpenAI erklärte, man wolle konstruktiv mit den Behörden zusammenarbeiten. Für ein Unternehmen, das sich der Finanzwelt gerade als solide genug für einen Börsengang verkaufen will, ist das ein denkbar ungünstiger Zeitpunkt für genau diese Fragen."
+      ]
+    },
+    {
+      "bereich": "Energie",
+      "ueberschrift": "Die letzten Fässer aus der Reserve",
+      "absaetze": [
+        "Die Internationale Energieagentur IEA, der Zusammenschluss der großen Ölverbraucherländer, beschleunigt die Freigabe ihrer Notreserven. Grund ist der Krieg im Nahen Osten, der seit Monaten den Tankerverkehr durch die Straße von Hormus stört: Nach Reuters-Recherchen hat die iranische Marine mehrere Frachter beschossen und mindestens zwei davon vorübergehend festgesetzt. Im März hatte die IEA deshalb 400 Millionen Barrel aus ihren Reserven freigegeben, rund 325 Millionen davon sind inzwischen tatsächlich auf dem Markt. Die restlichen gut 100 Millionen Barrel sollen jetzt schneller folgen, vorrangig als Diesel, denn dort ist die Lage am angespanntesten.",
+        "Deutschland muss im Rahmen der internationalen Vereinbarung einen Anteil von 4,9 Prozent beisteuern, umgerechnet rund 19,5 Millionen Barrel; gut 3,5 Millionen davon sind bereits abgerufen. Die G7-Staaten hatten die beschleunigte Freigabe Anfang Oktober gefordert, auch um gleichzeitige Wartungsstillstände in Raffinerien zu vermeiden und so die Dieselversorgung zu sichern. Besonders heikel ist das für Deutschland, weil sich Diesel-Knappheit sofort in Spritpreisen und Frachtkosten niederschlägt, genau dort, wo Verbraucher es zuerst merken. Für Autofahrer und Industrie heißt das: Die Reserven kaufen Zeit. Den Krieg beenden sie nicht."
+      ]
+    }
+  ],
+  "schluss": "Vier Institutionen also, die lange glaubten, ungestört weiterwachsen zu können: eine Koalition, eine Bank, ein KI-Unternehmen, ein globales Energiesystem. Heute merken alle vier gleichzeitig, dass Rechnungen präsentiert werden. Keine der vier Geschichten ist zu Ende erzählt. Die SPD sucht eine neue Führung, die EZB ein letztes Argument, OpenAI eine Verteidigung, die Welt Öl, das sie eigentlich nicht mehr hat. Morgen früh wissen wir, wie es mit mindestens einer davon weitergeht.",
+  "anreisser": "Bärbel Bas ist zurückgetreten – erschöpft von einer Koalition, die sich seit Monaten selbst zerlegt."
+}
